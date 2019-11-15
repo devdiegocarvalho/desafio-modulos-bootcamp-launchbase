@@ -16,11 +16,14 @@ As pastas estão ordenadas de acordo com cada módulo contendo nelas, os arquivo
  
  [Link Desafios Módulo 1](https://github.com/Rocketseat/bootcamp-launchbase-desafios-01)
  
+ 
+ ### Módulo 2
+
  - Construção do site Foodfy respeitando o layout e funcionalidades.
 
  [Link Desafios Módulo 2](https://github.com/Rocketseat/bootcamp-launchbase-desafios-02)
  
- ### Módulo 2
+ 
  ### Módulo 3
  ### Módulo 4
  ### Módulo 5
