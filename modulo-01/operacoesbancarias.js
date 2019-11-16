@@ -21,15 +21,17 @@ function createTransaction({ type: newType, value: newValue }) {
   }
 }
 
-///FALTA ESTE!!!!
 function getHigherTrasactionByType(typeOfTransaction) {
-  let bigg = 0;
+  const arrTransactions = [];
+  let maxTransaction = 0;
 
-  if (user.transactions.type == "credit") {
-    for (let i = 0; i < user.transactions.length; i++) {
-      media += user.transactions[i].value;
+  for (transaction of user.transactions) {
+    if (transaction.type === typeOfTransaction) {
+      arrTransactions.push(transaction.value);
     }
   }
+  maxTransaction = Math.max.apply(null, arrTransactions);
+  console.log(maxTransaction);
 }
 
 function getAverageTransactionValue() {
@@ -47,15 +49,16 @@ function getTransactionCount() {
   let cred = 0;
   let deb = 0;
 
-  for (let i = 0; i < user.transactions.length; i++) {
-    if (user.transactions[i].type === "credit") {
+  for (let transaction of user.transactions) {
+    if (transaction.type === "credit") {
       cred += 1;
-    } else if (user.transactions[i].type === "debit") {
+    } else if (transaction.type === "debit") {
       deb += 1;
     } else {
       console.log("Ops! Tipo de transação não reconhecida.");
     }
   }
+
   console.log(`{ credit: ${cred}, debit: ${deb}}`);
 }
 
@@ -63,9 +66,11 @@ createTransaction({ type: "credit", value: 50 });
 createTransaction({ type: "credit", value: 120 });
 createTransaction({ type: "debit", value: 80 });
 createTransaction({ type: "debit", value: 30 });
-createTransaction({ type: "debit", value: 30 });
 
 console.log(user.balance);
+
+getHigherTrasactionByType("credit");
+getHigherTrasactionByType("debit");
 
 getAverageTransactionValue();
 
